@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="zhedie" unicode="&#58888;" d="M970 198.6H378.4c-28.8 0-52 25-52 55.6s23.2 55.6 52 55.6H970c28.8 0 52-25 52-55.6s-23.2-55.6-52-55.6z m0 259.6H378.4c-28.8 0-52 25-52 55.6s23.2 55.6 52 55.6H970c28.8 0 52-25 52-55.6s-23.2-55.6-52-55.6z m-3.6 250.4H57.6C27 708.6 2 733.6 2 764.2s25 55.6 55.6 55.6h908.8c30.6 0 55.6-25 55.6-55.6s-25-55.6-55.6-55.6z m-704.8-510L2 384l259.6 185.4v-370.8z m-204-139.2h908.8c30.6 0 55.6-25 55.6-55.6s-25-55.6-55.6-55.6H57.6C27-51.8 2-26.8 2 3.8s25 55.6 55.6 55.6z m0 0"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>
