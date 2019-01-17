@@ -70,7 +70,6 @@
   }
   .dashboard{
     .pd-lt-15{
-      padding-left: 24px;
       padding-right: 24px;
       margin-bottom: 11px;
     }

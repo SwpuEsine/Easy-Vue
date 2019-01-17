@@ -1,4 +1,9 @@
 #app {
+  .hideLogo{
+    .ev-logo {
+      width: 50px !important;
+    }
+  }
   // 主体区域
   .main-container {
     min-height: 100%;
@@ -8,12 +13,30 @@
   }
   // 侧边栏
   .sidebar-container {
+    background: #fff;
+    .ev-logo{
+      font-size: 18px;
+      font-family: Myriad Pro, Helvetica Neue, Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-style: normal !important;
+      overflow: hidden;
+      line-height: 50px;
+      width: 180px;
+      img{
+        height: 50px;
+        line-height: 50px;
+      }
+      span{
+        position: absolute;
+      }
+    }
+
     transition: width 0.28s;
     width: 180px !important;
     height: 100%;
     position: fixed;
     font-size: 0px;
-    top: 0;
+    top: 0px;
     bottom: 0;
     left: 0;
     z-index: 1001;
@@ -56,10 +79,10 @@
   }
     .hideSidebar {
     .sidebar-container {
-      width: 36px !important;
+      width: 50px !important;
     }
     .main-container {
-      margin-left: 36px;
+      margin-left: 50px;
     }
     .submenu-title-noDropdown {
       padding-left: 10px !important;
@@ -72,7 +95,7 @@
     .el-submenu {
       overflow: hidden;
       &>.el-submenu__title {
-        padding-left: 10px !important;
+        /*padding-left: 10px !important;*/
         .el-submenu__icon-arrow {
           display: none;
         }

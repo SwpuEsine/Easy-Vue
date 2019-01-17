@@ -1,4 +1,9 @@
 <template>
+  <div class="root">
+  <div class="ev-logo">
+    <img src="../../../../assets/image/logo.png" class="ffn_img">
+    <span>&nbsp;EasyVue</span>
+  </div>
   <el-scrollbar wrap-class="scrollbar-wrapper">
     <el-menu   background-color="#fff"
                active-text-color="#4E5155" text-color="#a3a4a6" :collapse="isCollapse" >
@@ -17,8 +22,15 @@
           <el-menu-item index="2-1">dashboard</el-menu-item>
         </a>
       </el-submenu>
+      <el-submenu index="3">
+        <template slot="title"><svg-icon name="myaccount"></svg-icon>role</template>
+        <a href="/#/user">
+          <el-menu-item index="2-1">role</el-menu-item>
+        </a>
+      </el-submenu>
     </el-menu>
   </el-scrollbar>
+  </div>
 </template>
 
 <script>

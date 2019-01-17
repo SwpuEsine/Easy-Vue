@@ -1,13 +1,12 @@
 <template>
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside"/>
-    <sidebar class="sidebar-container"/>
+    <navbar/>
     <div class="main-conmain-containertainer">
-      <navbar/>
+      <sidebar class="sidebar-container"/>
       <app-main/>
       <app-footer></app-footer>
     </div>
-
   </div>
 </template>
 

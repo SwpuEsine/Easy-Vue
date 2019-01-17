@@ -6,7 +6,7 @@
         <p>伪造数据，我们更高效</p>
         <p>但，不仅于此</p>
         <!--<el-button :loading="loading" type="success" style="width:100%;margin-bottom:30px;height: 45px;background-color: #19be6b;" @click.native.prevent="handleLogin">登录</el-button>
--->        </div>
+-->   </div>
 
       <div class="login-box">
         <el-row>

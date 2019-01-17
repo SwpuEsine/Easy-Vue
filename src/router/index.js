@@ -29,6 +29,14 @@ export default new Router({
         component:()=> import('../pages/dashboard/index.vue')
       }]
     },{
+      path:'/user',
+      name:'user',
+      component:Layout,
+      children: [{
+        path:"",
+        component:()=> import('../pages/role/index.vue')
+      }]
+    },{
       path:'/sysuser',
       name:'sysuser',
       component:Layout,

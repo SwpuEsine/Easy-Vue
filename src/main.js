@@ -13,6 +13,7 @@ import i18n from '@/utils/i18n'
 import store from '@/store'
 import '@/styles/index.scss' // global css引入是可以引入的,在js中引入css是可以的
 import '@/components/echarts'
+import validate from '@/utils/validate'
 Vue.config.productionTip = false
 
 //兼容 vue-i18n@6.x

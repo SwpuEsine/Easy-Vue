@@ -35,6 +35,8 @@
           },
           classObj() {
             return {
+              hideLogo:!this.sidebarIsOpen,
+              openLogo:this.sidebarIsOpen,
               hideSidebar: !this.sidebarIsOpen,
               openSidebar: this.sidebarIsOpen,
               withoutAnimation: false
@@ -56,5 +58,6 @@
       position: fixed;
       top: 0;
     }
+
   }
 </style>

@@ -1,7 +1,4 @@
-/**
- * Created by jiachenpan on 16/11/18.
- */
-
+import Vue from 'vue';
 export function isvalidUsername(str) {
   const valid_map = ['admin', 'editor']
   return valid_map.indexOf(str.trim()) >= 0
@@ -29,4 +26,27 @@ export function validateUpperCase(str) {
 export function validatAlphabets(str) {
   const reg = /^[A-Za-z]+$/
   return reg.test(str)
+}
+
+
+/*编辑前判断*/
+export  function preValid(dataList) {
+  if(dataList.length>=1){
+    Vue.prototype.$message({
+      showClose: true,
+      message : '只能选择一列操作',
+      type : 'error'
+    })
+    return false
+  }else if(dataList.length==0){
+    console.log(dataList)
+    Vue.prototype.$message({
+      showClose: true,
+      message : '请选择',
+      type : 'error'
+    })
+    return false
+    //this.queryUserList(1,this.pageSize,userList)
+  }
+  return true
 }

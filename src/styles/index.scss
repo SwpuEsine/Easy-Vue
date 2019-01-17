@@ -10,10 +10,6 @@ body {
   height: 100%;
  }
 
-label {
-  font-weight: 700;
-}
-
 html {
   height: 100%;
   box-sizing: border-box;
@@ -79,8 +75,10 @@ a:hover {
 //main-container全局样式
 .app-main{
   min-height: 100%;
-  background-color: #f9fafc;
+  background-color: #f8f8f8;
   font-size: 14px;
+  padding: 15px;
+  margin: 0 auto;
 }
 
 .app-container {
