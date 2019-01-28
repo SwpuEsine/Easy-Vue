@@ -1,14 +1,17 @@
 import request from '@/utils/request'
-
-export function loginByUsername(userName, passWord) {
+import qs from 'qs'
+export function loginByUsername(username, password) {
   const data = {
-    userName,
-    passWord
+    username,
+    password
   }
   return request({
-    url: '/login',
+    url: '/user/login',
     method: 'post',
-    data
+    data:qs.stringify(data),
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
   })
 }
 

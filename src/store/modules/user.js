@@ -1,6 +1,6 @@
 //解析
 import { loginByUsername, logout, getUserInfo } from '@/api/login'
-import {queryUserList} from '@/api/user'
+import {queryUserList,getMenuList} from '@/api/user'
 const user={
   //vuex初始化状态
   state: {
@@ -35,6 +35,18 @@ const user={
       return new Promise((resolve, reject) => {
         //axios返回一个promise对象 可能正常  可能错误
         queryUserList(payLoad.page, payLoad.limit,payLoad.userName).then(response => {
+          const data = response.data
+          //把data传递给外层
+          resolve(data)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    getMenuList({commit}){
+      return new Promise((resolve, reject) => {
+        //axios返回一个promise对象 可能正常  可能错误
+        getMenuList().then(response => {
           const data = response.data
           //把data传递给外层
           resolve(data)

@@ -7,7 +7,7 @@
   <el-scrollbar wrap-class="scrollbar-wrapper">
     <el-menu   background-color="#fff"
                active-text-color="#4E5155" text-color="#a3a4a6" :collapse="isCollapse" >
-      <el-submenu index="1">
+    <!--  <el-submenu index="1">
         <template slot="title"><svg-icon name="myaccount"></svg-icon>用户管理</template>
         <a href="/#/sysuser">
           <el-menu-item index="1-1">选项4-1</el-menu-item>
@@ -27,7 +27,8 @@
         <a href="/#/user">
           <el-menu-item index="2-1">role</el-menu-item>
         </a>
-      </el-submenu>
+      </el-submenu>-->
+      <sidebar-item :items="menuList"></sidebar-item>
     </el-menu>
   </el-scrollbar>
   </div>
@@ -35,19 +36,35 @@
 
 <script>
 import { mapGetters } from 'vuex'
-//import SidebarItem from './SidebarItem' //SidebarItem
+import SidebarItem from './SidebarItem' //SidebarItem
 
 export default {
   name:"Sidebar",
-  components: {  },
+  components: {  SidebarItem},
   data(){
     return {
-      //冒号 表示动态传值
-      route:{
-        path:'/sysuser',
-        name:'sysuser',
-        component:Layout
-      }
+      menuList:[]
+      //冒号 表示动态传
+    }
+  },
+  created(){
+    this.getMenuList();
+  },
+  methods:{
+    getMenuList(){
+      this.$store.dispatch('getMenuList').then((data) => {
+        if(data.code==200){
+          this.menuList=data.data
+        }else {
+          this.$notify.error({
+            title: '错误',
+            message: data.data
+          });
+        }
+      }).catch((error) => {
+        console.log(error)
+        this.loading = false
+      })
     }
   },
   computed: {

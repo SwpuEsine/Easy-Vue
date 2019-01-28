@@ -1,6 +1,5 @@
 <template>
   <div class="navbar">
-
     <hamburger :toggle-click="toggleSideBar" :is-active="isSidebarActive" class="hamburger-container"/>
     <el-dropdown class="avatar-container" trigger="click">
       <!--头像右浮动-->
@@ -20,21 +19,21 @@
       </el-dropdown-menu>
     </el-dropdown>
 
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" >
       <li class="tab">
           <svg-icon name="user"></svg-icon>
       </li>
-      <li class="tab">
-          <svg-icon name="message" @click="sb"></svg-icon>
+      <li class="tab box"  >
+          <svg-icon name="message" @click.native="show = !show"></svg-icon>
           <el-badge  class="item" :value="3">
           </el-badge>
+          <message  :show="show" @handleClose="handleClose"></message>
       </li>
       <li class="tab">
           <!--native父组件 绑定子组件监听自己的方法-->
           <svg-icon name="fullscreen" @click.native="fullScreen"></svg-icon>
       </li>
     </ul>
-
   </div>
 </template>
 
@@ -43,10 +42,17 @@ import { mapGetters } from 'vuex'
 import Hamburger from '@/components/Hamburger'
 import Notification from '@/components/Notification'
 import screenfull from 'screenfull'
+import Message from  '@/pages/dashboard/Message'
 export default {
+  name:"naveBar",
+  data(){
+    return{
+      show:false
+    }
+  },
   components: {
     Hamburger,
-    Notification
+    Notification,Message
   },
   computed: {
     ...mapGetters([
@@ -57,9 +63,6 @@ export default {
     ])
   },
   methods: {
-    sb(){
-      alert("fuck")
-    },
     toggleSideBar() {
       this.$store.dispatch('alterSideBarAction')
     },
@@ -77,6 +80,9 @@ export default {
         return false
       }
       screenfull.toggle()
+    },
+    handleClose(){
+      this.show=false
     }
   }
 }
@@ -104,13 +110,13 @@ export default {
         margin-right: 0.3rem;
         line-height: 50px;
         padding: 0px 10px;
-        cursor: pointer;
         color: #a3a4a6;
-        &:hover{
-          color: #4E5155;
-        }
         svg{
+          &:hover{
+            color: #4E5155;
+          }
           margin-right: 6px;
+          cursor: pointer;
         }
       }
     }

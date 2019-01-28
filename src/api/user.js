@@ -12,3 +12,10 @@ export function queryUserList(page,limit,userName) {
   })
 }
 
+export function getMenuList() {
+
+  return request({
+    url: '/user/menuList',
+    method: 'get'
+  })
+}
