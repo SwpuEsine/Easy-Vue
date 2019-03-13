@@ -9,18 +9,11 @@
 
     <el-row :gutter="30" class="m-b-17">
       <div class="pd-lt-15">
-        <el-col :span="6">
-          <dash-card></dash-card>
-        </el-col>
-        <el-col :span="6">
-          <dash-card></dash-card>
-        </el-col>
-        <el-col :span="6">
-          <dash-card></dash-card>
-        </el-col>
-        <el-col :span="6">
-          <dash-card></dash-card>
-        </el-col>
+        <template v-for="item in cardList" >
+          <el-col :span="6" >
+            <dash-card :card-obj="item"></dash-card>
+          </el-col>
+        </template>
       </div>
     </el-row>
 
@@ -57,7 +50,19 @@
     name: "index",
     data(){
       return {
-
+         cardList:[{
+           title:"网络状况",
+           desc:"80mbs/s"
+         },{
+           title:"接口日调用量",
+           desc:"20000次"
+         },{
+           title:"内存占用",
+           desc:"50%"
+         },{
+           title:"cpu占用",
+           desc:"90/%"
+         }]
       }
     }
   }

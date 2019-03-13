@@ -1,7 +1,7 @@
 <template>
   <div class="app-footer">
-    Copyright © 2018 <a href="https://easyweb.vip" target="_blank">EasyWeb</a> All rights reserved.
-    Version 3.0.6
+    Copyright © 2018 <a href="#" target="_blank">EasyVue</a> All rights reserved.
+    Version 1.0.0
   </div>
 </template>
 

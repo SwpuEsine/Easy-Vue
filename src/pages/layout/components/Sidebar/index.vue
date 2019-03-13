@@ -24,7 +24,7 @@
       </el-submenu>
       <el-submenu index="3">
         <template slot="title"><svg-icon name="myaccount"></svg-icon>role</template>
-        <a href="/#/user">
+        <a href="/#/user_profile">
           <el-menu-item index="2-1">role</el-menu-item>
         </a>
       </el-submenu>-->

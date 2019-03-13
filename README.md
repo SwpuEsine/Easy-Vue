@@ -107,3 +107,7 @@ scss: generateLoaders('sass').concat(
 
 
 
+
+v-bind  简写:
+
+b-on    简写@

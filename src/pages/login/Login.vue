@@ -95,22 +95,12 @@
               // 而应执行 action 来分发 (dispatch) 事件通知 store 去改变
               //你需要明白 store.dispatch 可以处理被触发的 action 的处理函数返回的 Promise
               this.$store.dispatch('LoginByUsername', this.user).then((data) => {
-                console.log(data)
                 this.loading = false
                 if(data.code==200){
-                  //path: this.redirect || '/home'
-                  // name跳转
                   this.$router.push({name:'home'})
-                }else {
-                  this.$notify.error({
-                    title: '错误',
-                    message: data.msg
-                  });
                 }
-
-              }).catch((error) => {
-                console.log(error)
-                this.loading = false
+              }).catch(error=>{
+                this.loading=false
               })
             }
           }

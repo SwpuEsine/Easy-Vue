@@ -1,19 +1,18 @@
 <template>
   <div class="navbar">
     <hamburger :toggle-click="toggleSideBar" :is-active="isSidebarActive" class="hamburger-container"/>
-    <el-dropdown class="avatar-container" trigger="click">
+    <el-dropdown class="avatar-container" trigger="click" @command="handleDropDown">
       <!--头像右浮动-->
       <div class="avatar-wrapper">
         <img src="../../../assets/image/avatar.jpg" class="user-avatar">
         <i class="el-icon-caret-bottom"/>
       </div>
+
       <el-dropdown-menu slot="dropdown" class="user-dropdown">
-        <router-link class="inlineBlock" to="/">
-          <el-dropdown-item>
+          <el-dropdown-item command="set">
             <svg-icon name="set"></svg-icon>设置
           </el-dropdown-item>
-        </router-link>
-        <el-dropdown-item divided>
+        <el-dropdown-item divided command="quit">
           <svg-icon name="quit"></svg-icon> 退出
         </el-dropdown-item>
       </el-dropdown-menu>
@@ -63,13 +62,21 @@ export default {
     ])
   },
   methods: {
+    handleDropDown(command) {
+      switch (command){
+        case 'quit':
+          //这里要清理COOKIE什么的
+          this.$store.dispatch('LogOut').then(() => {
+            this.$router.push({name:'login'})
+          })
+          break;
+        case 'set':
+          this.$message('click on item ' + command);
+          break;
+      }
+    },
     toggleSideBar() {
       this.$store.dispatch('alterSideBarAction')
-    },
-    logout() {
-      this.$store.dispatch('LogOut').then(() => {
-        location.reload()
-      })
     },
     fullScreen(){
       if (!screenfull.enabled) {

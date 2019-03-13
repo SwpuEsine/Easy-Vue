@@ -31,7 +31,7 @@ export function validatAlphabets(str) {
 
 /*编辑前判断*/
 export  function preValid(dataList) {
-  if(dataList.length>=1){
+  if(dataList.length>1){
     Vue.prototype.$message({
       showClose: true,
       message : '只能选择一列操作',
@@ -39,14 +39,12 @@ export  function preValid(dataList) {
     })
     return false
   }else if(dataList.length==0){
-    console.log(dataList)
     Vue.prototype.$message({
       showClose: true,
       message : '请选择',
       type : 'error'
     })
     return false
-    //this.queryUserList(1,this.pageSize,userList)
   }
   return true
 }

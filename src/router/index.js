@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Login from '@/pages/login/Login'
 Vue.use(Router)
 const Layout=()=> import('../pages/home/Home.vue')
-const Settings=() => import('../pages/user/Settings.vue')
+const Settings=() => import('../pages/user_profile/Settings.vue')
 export default new Router({
   //给命名起名字 使其能够更快的连接和跳转  可能会用在keep-alive缓存里面
   base:"/",
@@ -34,7 +34,61 @@ export default new Router({
       component:Layout,
       children: [{
         path:"",
+        component:()=> import('../pages/user/index.vue')
+      }]
+    },{
+      path:'/menu',
+      name:'menu',
+      component:Layout,
+      children: [{
+        path:"",
+        component:()=> import('../pages/menu/index.vue')
+      }]
+    },{
+      path:'/role',
+      name:'role',
+      component:Layout,
+      children: [{
+        path:"",
         component:()=> import('../pages/role/index.vue')
+      }]
+    },{
+      path:'/log',
+      name:'log',
+      component:Layout,
+      children: [{
+        path:"",
+        component:()=> import('../pages/log/index.vue')
+      }]
+    },{
+      path:'/cache',
+      name:'cache',
+      component:Layout,
+      children: [{
+        path:"",
+        component:()=> import('../pages/cache/index.vue')
+      }]
+    },{
+      path:'/plan',
+      name:'plan',
+      component:Layout,
+      children: [{
+        path:"",
+        component:()=> import('../pages/plan/index.vue')
+      }]
+    },{
+      path:'/monitor',
+      name:'druidSql',
+      component:Layout,
+      children: [{
+        path:"sql",
+        component:()=> import('../pages/monitor/druidSql.vue')
+      },{
+        path:"queue",
+        component:()=> import('../pages/monitor/rabbitMq.vue')
+      },{
+        path:"es",
+        component:()=> import('../pages/monitor/elasticSearch.vue')
       }]
     },{
       path:'/sysuser',
@@ -52,16 +106,16 @@ export default new Router({
             {
               path:"basic",
               name:'basic',
-              component:()=> import('../pages/user/Basic.vue')
+              component:()=> import('../pages/user_profile/Basic.vue')
             },
             {
               path:"profile",
               name:'profile',
-              component:()=> import('../pages/user/Profile.vue')
+              component:()=> import('../pages/user_profile/Profile.vue')
             },{
               path:"account",
               name:'account',
-              component:()=> import('../pages/user/Account.vue')
+              component:()=> import('../pages/user_profile/Account.vue')
             }
           ]
         }
