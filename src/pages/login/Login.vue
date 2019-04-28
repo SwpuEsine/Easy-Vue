@@ -2,9 +2,9 @@
   <div class="sys-app">
     <div class="sys-login">
       <div class="em-index__login">
-        <img src="@/assets/image/easy-mock.png" alt="怎么回事"/>
-        <p>伪造数据，我们更高效</p>
-        <p>但，不仅于此</p>
+        <!--<img src="@/assets/image/easy-mock.png" alt="怎么回事"/>-->
+        <h1>Easy Vue</h1>
+        <!--<p>但，不仅于此</p>-->
         <!--<el-button :loading="loading" type="success" style="width:100%;margin-bottom:30px;height: 45px;background-color: #19be6b;" @click.native.prevent="handleLogin">登录</el-button>
 -->   </div>
 
@@ -165,7 +165,7 @@ img {
   margin-bottom: 15px;
 }
 
-p{
+p,h1{
   color: #fff;
 }
 
